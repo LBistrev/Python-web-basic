@@ -7,7 +7,7 @@
 <body>
 <h1>IT works</h1>
 <h2>The number is {{ number }}</h2>
-<a href="{% url 'go to home' %}>Go to HOME</a>
+<a href="{% url 'go to home' %}">Go to HOME</a>
 <ul>
     <li>Beef</li>
     <li>Fish</li>
@@ -15,7 +15,7 @@
 </ul>
 
 <ul>
-    {%  for number in numbers %}
+    {% for number in numbers %}
         <li>Number {{ number }}</li>
     {% endfor %}
 </ul>

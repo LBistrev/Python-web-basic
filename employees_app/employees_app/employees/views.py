@@ -18,6 +18,8 @@ from django.shortcuts import render, redirect
 #     )
 from django.urls import reverse_lazy
 
+from employees_app.employees.models import Department, Employee
+
 
 def home(request):
     print(reverse_lazy("index"))
@@ -50,7 +52,24 @@ def department_details(request, department_id):
 
 
 def list_departments(request):
-    return HttpResponse(f"This is list of departments")
+    # така създаваме обект
+    department = Department(
+        name=f'Department {random.randint(1, 1024)}',
+
+    )
+    # ако искаме да отиде в базата му казваме
+    department.save()
+    # същото можем да направим и като му кажем
+    # Department.objects.create(
+    #    name = f'Department {random.randint(1, 1024)}'
+    # )
+    context = {
+        'departments': Department.objects
+            .prefetch_related('employee_set')
+            .all(),
+        'employees': Employee.objects.all(),
+    }
+    return render(request, 'list_departments.html', context)
 
 
 def create(request):
