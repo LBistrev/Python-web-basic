@@ -39,7 +39,8 @@ def home(request):
 def redirect_to_home(request):
     # return HttpResponseRedirect()
     # return redirect(to='/')
-    return redirect('department details', department_id=random.randint(1, 1024))
+    # return redirect('department details', department_id=random.randint(1, 1024))
+    return redirect('index')
 
 
 def not_found(request):

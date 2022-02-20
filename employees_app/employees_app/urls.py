@@ -16,11 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+import employees_app
 from employees_app.employees.views import home, redirect_to_home
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/', home, name='index'),
+    path('', home, name='index'),
     path('go-to-home/', redirect_to_home, name='go to home'),
     path('departments/', include('employees_app.employees.urls_app')),
+    path('templates/', include('employees_app.template_examples.urls_templates')),
 ]
