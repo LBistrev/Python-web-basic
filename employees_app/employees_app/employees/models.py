@@ -99,6 +99,12 @@ class Employee(models.Model):
         on_delete=models.CASCADE,
     )
 
+    image = models.ImageField(
+        null=True,
+        blank=True,
+        upload_to='profiles',
+    )
+
     class Meta:
         ordering = ('company', 'first_name')
 

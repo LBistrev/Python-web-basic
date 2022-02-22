@@ -12,12 +12,13 @@
 <body>
 <ul>
     <li>
-        <a href="{% url 'go to home' %}">Go to Home</a>
-    </li>
-    <li>
-        <a href="{% url 'templates index' %}">Go to Templates</a>
+        <a href="{% url 'index' %}">Home</a>
+
+
+        <a href="{% url 'create employee' %}">Create employee</a>
     </li>
 </ul>
+
 {% block content %}
 {% endblock %}
 </body>
