@@ -70,7 +70,8 @@ class Employee(models.Model):
     egn = models.CharField(
         max_length=10,
         unique=True,
-        verbose_name='EGN'
+        verbose_name='EGN',
+
     )
 
     job_title = models.IntegerField(

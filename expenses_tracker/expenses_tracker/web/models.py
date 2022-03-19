@@ -26,6 +26,7 @@ class Profile(models.Model):
             MinLengthValidator(FIRST_NAME_MIN_LENGTH),
             validate_only_letters,
         ),
+
     )
 
     last_name = models.CharField(
